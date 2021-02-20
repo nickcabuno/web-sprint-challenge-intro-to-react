@@ -1,8 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* font-family: 'Press Start 2P', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+/* font-family: 'Play', sans-serif; */
+
+
+
 .App {
   text-align: center;
+  color: #ffffff;
+  
 }
-.Header {
-  color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
+
+.picDiv {
+  min-width: 400px;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  color: #ffffff;
+  width: 60%;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  
 }
-/* write your parent styles in here for your App.js */
+
+h1{
+  font-size: 7vh;
+  font-family: 'Play', sans-serif;
+  color: #ffffff;
+}
+
+p{
+  color: #7c707c;
+  font-size: 2vh;
+  text-align: center;
+  margin: 3% 13% 1% 13%;
+
+}
+
+button{
+  background-color:#332e33;
+  border: solid 2px;
+  padding: 1% 40%;
+  margin-top: 3%;
+  font-family: 'Play', sans-serif;
+  font-size: large;
+  border-radius: 40px;
+  outline: none;
+  margin-bottom: 3%;
+}
+
+
