@@ -3,21 +3,22 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import styled from 'styled-components'
-// import Details from './details'
+
+// there a few things commented out because i was in the process of making an open/close details button and couldn't get it to work, but wanted to come back to it
 
 
 
 const App = () => {
   const [starFriends, setStarFriends] = useState([])
-  const [currentFriendId, setCurrentFriendId] = useState('')
+  const [currentStar, setCurrentStar] = useState('')
 
-  const openDetails = people => {
-    setCurrentFriendId(people)
-  }
+  // const openDetails = people => {
+  //   setCurrentStar(people)
+  // }
 
-  const closeDetails = () => {
-    setCurrentFriendId(null)
-  }
+  // const closeDetails = () => {
+  //   setCurrentStar(null)
+  // }
 
   useEffect(() => {
     axios.get('https://swapi.dev/api/people/')
@@ -29,16 +30,16 @@ const App = () => {
       })
   }, [])
 
-  const StyledFriend = styled.div`
+  const StyledCharacter = styled.div`
   
   font-weight: bold;
   width: 60%;
   justify-content: space-between;
   margin: 5%;
   `
-  function Friend({ info, action }) {
+  function Character({ info, action }) {
     return (
-    <StyledFriend>
+    <StyledCharacter>
     {info.name}
       {/* <button className="button" onClick={() => action(info.name)}>
         See Info
@@ -48,7 +49,7 @@ const App = () => {
       <p>Mass: {info.mass}</p>
       <p>Gender: {info.gender}</p>
       <p>Hair Color: {info.hair_color}</p>
-    </StyledFriend>
+    </StyledCharacter>
   )
   }
 
@@ -66,7 +67,7 @@ const App = () => {
 
       {
         starFriends.map(fr => {
-          return <Friend key={fr.name} info={fr} action={openDetails} />
+          return <Character key={fr.name} info={fr} /*action={openDetails}*/ />
         })
       }
       {/* {
