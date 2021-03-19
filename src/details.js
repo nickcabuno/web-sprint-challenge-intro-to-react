@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function Details(props) {
-  const { friendId, close } = props
+  const { /*friendId*/ close } = props
   const [details, setDetails] = useState(null)
 
   useEffect(() => {
     axios.get('https://swapi.dev/api/people/')
-      .then(res => { setDetails(res.data) })
+      .then(res => { console.log(res) })
       .catch(err => { debugger })
   }, [])
-
+  
   
 
   return (
@@ -20,8 +20,9 @@ export default function Details(props) {
         details &&
         <>
           <p>{details.name} is {details.height}</p>
-          <p>email is {details.gender}</p>
-          {} likes:
+          
+          <p>{details.gender}</p>
+          
           
         </>
       }
